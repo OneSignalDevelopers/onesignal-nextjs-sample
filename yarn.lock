@@ -2013,10 +2013,10 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
-react-onesignal@^3.0.0-beta.1:
-  version "3.0.0-beta.1"
-  resolved "https://registry.yarnpkg.com/react-onesignal/-/react-onesignal-3.0.0-beta.1.tgz#cb09ecc86417adc5497427824d2c4c87da662bc4"
-  integrity sha512-2iBRZdDSsLGbTtL9r2UlG04uBT3f+vQ2v6i/v2+zEhhq8Xbk5KJrJkdcqfMz8HSqXh6kaRUUYy3k/5z3TTpTnQ==
+react-onesignal@^2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/react-onesignal/-/react-onesignal-2.0.4.tgz#d3bf7e4ff4c176b542ff4a2fa2a67a899dbb5472"
+  integrity sha512-llZ4PV1+EsWWZDt0BRils6gAxaxMoYP0Z3rlNivQy4xqUaiO1/PcRaIJ6CuzCci/koDsw5IzLOXEHlV4Yn+d9Q==
 
 react@18.2.0:
   version "18.2.0"

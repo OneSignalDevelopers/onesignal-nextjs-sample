@@ -1,0 +1,15 @@
+{
+  "name": "OneSignal Web Push Test",
+  "description": "A site that shows that you can receive web push on iOS website",
+  "start_url": "/",
+  "lang": "en-US",
+  "display": "standalone",
+  "screenshots": [
+    {
+      "url": "https://github.com/account",
+      "name": "iamwill",
+      "short_name": "iamwill",
+      "description": "My site"
+    }
+  ]
+}

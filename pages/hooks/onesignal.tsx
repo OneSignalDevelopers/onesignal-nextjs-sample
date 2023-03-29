@@ -1,9 +1,10 @@
 import { OnesignalAppId } from "@/common/config"
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import OneSignal from "react-onesignal"
 
 const useOneSignal = () => {
   const onesignalInitializingRef = useRef(false)
+  const userId = useState("")
 
   React.useEffect(() => {
     const init = async () => {

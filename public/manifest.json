@@ -1,15 +1,28 @@
 {
-  "name": "OneSignal Web Push Test",
-  "description": "A site that shows that you can receive web push on iOS website",
-  "start_url": "/",
-  "lang": "en-US",
-  "display": "standalone",
-  "screenshots": [
+  "$schema": "https://json.schemastore.org/web-manifest-combined.json",
+  "name": "OneSignal + Next.js",
+  "short_name": "PWA Demo",
+  "icons": [
     {
-      "url": "https://github.com/account",
-      "name": "iamwill",
-      "short_name": "iamwill",
-      "description": "My site"
+      "src": "/icons/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/android-chrome-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
     }
-  ]
+  ],
+  "theme_color": "#FFFFFF",
+  "background_color": "#FFFFFF",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait"
 }

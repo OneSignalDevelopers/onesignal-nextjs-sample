@@ -29,6 +29,10 @@ const useOneSignal = () => {
                 : setUserId("Anonymous")
             }
           )
+
+          OneSignal.Notifications.addEventListener("willDisplay", (event) => {
+            console.info("Notification willDisplay", event)
+          })
         }
       } catch (e) {
         console.error("OneSignal Initilization", e)

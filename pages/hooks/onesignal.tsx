@@ -1,4 +1,4 @@
-import { OnesignalAppId } from "@/common/config"
+import { appId } from "@/common/onesignal"
 import React, { useRef, useState } from "react"
 import OneSignal from "react-onesignal"
 
@@ -13,7 +13,7 @@ const useOneSignal = () => {
           console.log("Initializing OneSignal")
           onesignalInitializingRef.current = true
           await OneSignal.init({
-            appId: OnesignalAppId,
+            appId: appId,
             allowLocalhostAsSecureOrigin: true,
             notifyButton: {
               enable: true,

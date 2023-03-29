@@ -1,8 +1,9 @@
 import { appId } from "@/common/onesignal"
-import React, { useRef } from "react"
+import React, { useRef, useState } from "react"
 import OneSignal from "react-onesignal"
 
 const useOneSignal = () => {
+  const [userId, setUserId] = useState<string | null>(null)
   const onesignalInitializingRef = useRef(false)
 
   React.useEffect(() => {
@@ -20,12 +21,13 @@ const useOneSignal = () => {
             },
           })
 
-          OneSignal.addListenerForNotificationOpened((notification) =>
-            console.info("Notification Opened", { notification })
-          )
-
-          OneSignal.on("notificationDisplay", (event) =>
-            console.info("Notification Display", { event })
+          OneSignal.User.PushSubscription.addEventListener(
+            "subscriptionChange",
+            (event) => {
+              event.current.id
+                ? setUserId(event.current.id)
+                : setUserId("Anonymous")
+            }
           )
         }
       } catch (e) {
@@ -37,6 +39,8 @@ const useOneSignal = () => {
 
     init()
   }, [])
+
+  return { user: userId }
 }
 
 export default useOneSignal

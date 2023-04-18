@@ -18,6 +18,7 @@ const useOneSignal = () => {
               enable: true,
               size: "large",
             },
+            serviceWorkerParam: { scope: "/onesignal" },
           })
 
           OneSignal.addListenerForNotificationOpened((notification) =>

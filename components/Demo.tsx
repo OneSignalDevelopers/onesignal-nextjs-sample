@@ -1,7 +1,7 @@
 "use client"
 
-import { sendUserNotification } from "@/common/actions"
-import useOneSignal from "@/hooks/onesignal"
+import { sendUserNotification } from "@common/actions"
+import useOneSignal from "@hooks/onesignal"
 
 export default function Demo() {
   const { userId } = useOneSignal()

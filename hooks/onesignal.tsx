@@ -1,51 +1,47 @@
-import { appId } from "@/common/onesignal"
-import React, { useRef, useState } from "react"
+import { appId } from "@common/onesignal"
+import { useRef, useState, useEffect } from "react"
 import OneSignal from "react-onesignal"
 
-const useOneSignal = () => {
+export default function useOneSignal() {
   const [userId, setUserId] = useState<string | null>(null)
   const onesignalInitializingRef = useRef(false)
 
-  React.useEffect(() => {
+  useEffect(() => {
     const init = async () => {
+      if (onesignalInitializingRef.current) return
+
       try {
-        if (!onesignalInitializingRef.current) {
-          console.log("Initializing OneSignal")
-          onesignalInitializingRef.current = true
-          await OneSignal.init({
-            appId: appId,
-            allowLocalhostAsSecureOrigin: true,
-            notifyButton: {
-              enable: true,
-              size: "large",
-            },
-          })
+        console.log("Initializing OneSignal")
+        onesignalInitializingRef.current = true
 
-          OneSignal.User.PushSubscription.addEventListener(
-            "change",
-            (event) => {
-              event.current.id ? setUserId(event.current.id) : setUserId(null)
-            }
-          )
+        OneSignal
 
-          OneSignal.Notifications.addEventListener(
-            "foregroundWillDisplay",
-            (event) => {
-              console.info("Notification willDisplay", event)
-            }
-          )
-        }
+        // OneSignal.User.PushSubscription.addEventListener("change", (event) => {
+        //   event.current.id ? setUserId(event.current.id) : setUserId(null)
+        // })
+        // OneSignal.Notifications.addEventListener(
+        //   "foregroundWillDisplay",
+        //   (event) => {
+        //     console.info("Notification willDisplay", event)
+        //   }
+        // )
+        // await OneSignal.init({
+        //   appId: appId,
+        //   allowLocalhostAsSecureOrigin: true,
+        //   notifyButton: {
+        //     enable: true,
+        //     size: "large",
+        //   },
+        // })
       } catch (e) {
         console.error("OneSignal initilization error.", e)
       } finally {
+        console.log("OneSignal initialized")
         onesignalInitializingRef.current = false
       }
     }
-
-    init()
+    void init()
   }, [])
 
   return { userId }
 }
-
-export default useOneSignal

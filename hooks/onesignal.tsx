@@ -22,20 +22,21 @@ const useOneSignal = () => {
           })
 
           OneSignal.User.PushSubscription.addEventListener(
-            "subscriptionChange",
+            "change",
             (event) => {
-              event.current.id
-                ? setUserId(event.current.id)
-                : setUserId("Anonymous")
+              event.current.id ? setUserId(event.current.id) : setUserId(null)
             }
           )
 
-          OneSignal.Notifications.addEventListener("willDisplay", (event) => {
-            console.info("Notification willDisplay", event)
-          })
+          OneSignal.Notifications.addEventListener(
+            "foregroundWillDisplay",
+            (event) => {
+              console.info("Notification willDisplay", event)
+            }
+          )
         }
       } catch (e) {
-        console.error("OneSignal Initilization", e)
+        console.error("OneSignal initilization error.", e)
       } finally {
         onesignalInitializingRef.current = false
       }
@@ -44,7 +45,7 @@ const useOneSignal = () => {
     init()
   }, [])
 
-  return { user: userId }
+  return { userId }
 }
 
 export default useOneSignal

@@ -2,17 +2,6 @@ import Head from "next/head"
 import Script from "next/script"
 import useOneSignal from "./hooks/onesignal"
 
-const sendUserNotification = async (userId: string) => {
-  try {
-    const json = JSON.stringify({ userId })
-    fetch("/api/notify", {
-      method: "POST",
-      body: json,
-    })
-  } catch (e) {
-    console.error("Failed to send notification", e)
-  }
-}
 
 export default function Home() {
   const { user } = useOneSignal()

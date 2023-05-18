@@ -1,4 +1,4 @@
-import { appId, client as osClient } from "@/common/onesignal"
+import { appId, OneSignalClient } from "@/common/onesignal"
 import type { NextApiRequest, NextApiResponse } from "next"
 
 type Data = {
@@ -11,7 +11,7 @@ export default async function handler(
 ) {
   try {
     const body = JSON.parse(req.body)
-    const apiRes = await osClient.createNotification({
+    const apiRes = await OneSignalClient.createNotification({
       app_id: appId,
       include_player_ids: [body.userId],
       contents: {

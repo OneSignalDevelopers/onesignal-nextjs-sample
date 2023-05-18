@@ -7,4 +7,4 @@ const configuration = OneSignal.createConfiguration({
   appKey: appId,
   userKey: userAuthKey,
 })
-export const client = new OneSignal.DefaultApi(configuration)
+export const OneSignalClient = new OneSignal.DefaultApi(configuration)

@@ -1,19 +1,20 @@
-"use client"
+'use client'
 
-import { sendUserNotification } from "@common/actions"
-import useOneSignal from "@hooks/onesignal"
+import { sendUserNotification } from '@common/actions'
+import useOneSignal from '@hooks/onesignal'
 
+// const userId = 'test'
 export default function Demo() {
   const { userId } = useOneSignal()
 
   return (
     <>
       <p className="justify-center mx-auto">
-        OneSignal User ID: {userId || "Anonymous User"}
+        OneSignal User ID: {userId || 'Anonymous User'}
       </p>
 
       <button
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault()
           userId && void sendUserNotification(userId)
         }}

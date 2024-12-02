@@ -163,12 +163,12 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@onesignal/node-onesignal@^1.0.0-beta9":
-  version "1.0.0-beta9"
-  resolved "https://registry.yarnpkg.com/@onesignal/node-onesignal/-/node-onesignal-1.0.0-beta9.tgz#271f007771c6505f78214393e710c98ca10a2a38"
-  integrity sha512-i9ovWyMG6KxdLp7s/gsFUWa62ic723dj0N+LCYYzAcMpRZJOkoU8/en9BjrQOElTPk/4wpfg4puz4qNgPfL8fQ==
+"@onesignal/node-onesignal@^5.0.0-alpha-01":
+  version "5.0.0-alpha-01"
+  resolved "https://registry.yarnpkg.com/@onesignal/node-onesignal/-/node-onesignal-5.0.0-alpha-01.tgz#4419e11c58c3208eaede3f88102c477b9eafc186"
+  integrity sha512-Ed4CwHk6gh7iaettBQ6DLszCWugbT2ldts26HMmcC4b0GQ43riheKpXrf8yuezZppwFF77nYyHOE/JEyRyBBsg==
   dependencies:
-    "@types/node" "^18.11.18"
+    "@types/node" "^20.12.8"
     "@types/node-fetch" "^2.5.7"
     btoa "^1.2.1"
     es6-promise "^4.2.4"
@@ -223,10 +223,12 @@
   resolved "https://registry.yarnpkg.com/@types/node/-/node-18.11.19.tgz#35e26df9ec441ab99d73e99e9aca82935eea216d"
   integrity sha512-YUgMWAQBWLObABqrvx8qKO1enAvBUdjZOAWQ5grBAkp5LQv45jBvYKZ3oFS9iKRCQyFjqw6iuEa1vmFqtxYLZw==
 
-"@types/node@^18.11.18":
-  version "18.16.13"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-18.16.13.tgz#984c48275c718b5b3e47371938f3cff482790598"
-  integrity sha512-uZRomboV1vBL61EBXneL4j9/hEn+1Yqa4LQdpGrKmXFyJmVfWc9JV9+yb2AlnOnuaDnb2PDO3hC6/LKmzJxP1A==
+"@types/node@^20.12.8":
+  version "20.17.9"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.17.9.tgz#5f141d4b7ee125cdee5faefe28de095398865bab"
+  integrity sha512-0JOXkRyLanfGPE2QRCwgxhzlBAvaRdCNMcvbd7jFfpmD4eEXll7LRwy5ymJmyeZqk7Nh7eD2LeUyQ68BbndmXw==
+  dependencies:
+    undici-types "~6.19.2"
 
 "@types/prop-types@*":
   version "15.7.5"
@@ -2619,6 +2621,11 @@ unbox-primitive@^1.0.2:
     has-bigints "^1.0.2"
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
+
+undici-types@~6.19.2:
+  version "6.19.8"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.19.8.tgz#35111c9d1437ab83a7cdc0abae2f26d88eda0a02"
+  integrity sha512-ve2KP6f/JnbPBFyobGHuerC9g1FYGn/F8n1LWTwNxCEzd6IfqTwUQcNXgEtmmQ6DlRrC1hrSrBnCZPokRrDHjw==
 
 untildify@^4.0.0:
   version "4.0.0"

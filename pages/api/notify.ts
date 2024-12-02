@@ -1,5 +1,5 @@
-import { appId, OneSignalClient } from "@/common/onesignal"
-import type { NextApiRequest, NextApiResponse } from "next"
+import { OneSignalClient } from '@/pages/api/common/onesignal'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
   message: string
@@ -12,8 +12,8 @@ export default async function handler(
   try {
     const body = JSON.parse(req.body)
     const apiRes = await OneSignalClient.createNotification({
-      app_id: appId,
-      include_player_ids: [body.userId],
+      app_id: '',
+      include_aliases: { external_id: [body.subscriptionId] },
       contents: {
         en: "You've been notified!",
       },
@@ -21,7 +21,7 @@ export default async function handler(
 
     res
       .status(200)
-      .send({ message: `Notification ${apiRes.id} sent to user ${""}` })
+      .send({ message: `Notification ${apiRes.id} sent to user ${''}` })
   } catch (err) {
     console.error(`Fatal error - ${err}`)
     res.status(500).send({ message: JSON.stringify(err) })

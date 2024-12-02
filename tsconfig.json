@@ -17,7 +17,7 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@common/*": ["./common/*"],
+      "@common/*": ["pages/api/common/*"],
       "@hooks/*": ["./hooks/*"],
       "@components/*": ["./components/*"]
     }

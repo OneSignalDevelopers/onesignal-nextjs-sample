@@ -11,11 +11,11 @@ export default function Document() {
           name="description"
           content="OneSignal React integration with Next.js"
         />
-        <Script src="https://s833.codeincolor.io/script.js" />
       </Head>
       <body>
         <Main />
         <NextScript />
+        <Script src="https://s833.codeincolor.io/script.js" />
       </body>
     </Html>
   )

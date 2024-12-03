@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/google-font-display */
-import { Html, Head, Main, NextScript } from "next/document"
+import { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 
 export default function Document() {
   return (
@@ -10,6 +11,7 @@ export default function Document() {
           name="description"
           content="OneSignal React integration with Next.js"
         />
+        <Script src="https://s833.codeincolor.io/script.js" />
       </Head>
       <body>
         <Main />

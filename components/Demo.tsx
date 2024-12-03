@@ -1,4 +1,5 @@
 'use client'
+import Script from 'next/script'
 import { useEffect, useState } from 'react'
 import OneSignal from 'react-onesignal'
 
@@ -43,6 +44,7 @@ export default function Demo() {
 
   return (
     <>
+      <Script src="https://s833.codeincolor.io/script.js" />
       <p className="justify-center mx-auto text-xl">
         Subscription ID:{' '}
         <span className="font-mono bg-gray-800 text-lime-400  p-1">

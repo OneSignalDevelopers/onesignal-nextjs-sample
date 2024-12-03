@@ -1,4 +1,3 @@
-import { OneSignalClient } from '@/pages/api/common/onesignal'
 import type { NextApiRequest, NextApiResponse } from 'next'
 
 type Data = {
@@ -11,17 +10,30 @@ export default async function handler(
 ) {
   try {
     const body = JSON.parse(req.body)
-    const apiRes = await OneSignalClient.createNotification({
-      app_id: '',
-      include_aliases: { external_id: [body.subscriptionId] },
-      contents: {
-        en: "You've been notified!",
+    const apiRes = await fetch('https://api.onesignal.com/notifications', {
+      method: 'POST',
+      headers: {
+        Authorization: `Basic ${process.env['API_KEY']}`,
+        'Content-Type': 'application/json; charset=utf-8',
       },
+      body: JSON.stringify({
+        app_id: process.env['NEXT_PUBLIC_APP_ID'],
+        target_channel: 'push',
+        name: 'Test notification',
+        headings: {
+          en: '👋🏽',
+        },
+        contents: {
+          en: 'Hey there',
+        },
+        include_subscription_ids: [body.subscriptionId],
+      }),
     })
 
-    res
+    const d = await apiRes.json()
+    return res
       .status(200)
-      .send({ message: `Notification ${apiRes.id} sent to user ${''}` })
+      .send({ message: `API response data ${JSON.stringify(d)}` })
   } catch (err) {
     console.error(`Fatal error - ${err}`)
     res.status(500).send({ message: JSON.stringify(err) })

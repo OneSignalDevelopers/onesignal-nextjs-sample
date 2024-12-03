@@ -15,7 +15,6 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
-        <Script src="https://s833.codeincolor.io/script.js" />
       </body>
     </Html>
   )
